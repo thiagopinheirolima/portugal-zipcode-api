@@ -2,14 +2,14 @@
   "name": "portugal-zipcode-api",
   "version": "1.0.0",
   "description": "Portugal zipcode API",
-  "main": "dist/index.js",
+  "main": "dist/server.js",
   "scripts": {
     "prepare": "husky install",
-    "build": "tsc",
-    "start": "ts-node src/index.ts",
-    "dev": "ts-node-dev --respawn --transpile-only --exit-child --watch src src/index.ts",
-    "test": "jest --passWithNoTests",
-    "test:watch": "jest --passWithNoTests --watch",
+    "build": "tsc --project tsconfig.build.json",
+    "start": "ts-node src/server.ts",
+    "dev": "ts-node-dev --respawn --transpile-only --exit-child src/server.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "test:staged": "jest --passWithNoTests --findRelatedTests"
   },
   "repository": {
