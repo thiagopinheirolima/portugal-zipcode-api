@@ -1,9 +1,6 @@
 export class Address {
-  zipcode: String
-  street?: String
-  city?: String
+  street?: string
+  city?: string
 
-  constructor(zipcode: String) {
-    this.zipcode = zipcode
-  }
+  constructor(public readonly zipcode: string) {}
 }
