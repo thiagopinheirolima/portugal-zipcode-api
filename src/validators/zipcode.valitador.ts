@@ -8,7 +8,7 @@ const schema = joi
 
 const message = 'zipcode must be in format "xxxx-xxx"'
 
-export function validateZipcode(
+export function zipcodeValidator(
   req: Request,
   res: Response,
   next: NextFunction

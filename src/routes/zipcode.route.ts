@@ -1,17 +1,9 @@
-import express from 'express'
-import { Address } from '../models'
-import { validateZipcode } from '../validators'
+import { Router } from 'express'
+import { zipcodeController } from '../controllers'
+import { zipcodeValidator } from '../validators'
 
-const zipcodeRouter = express.Router()
+const zipcodeRouter = Router()
 
-zipcodeRouter.get('/:zipcode', validateZipcode, (req, res) => {
-  const zipcode = req.params.zipcode
-
-  // TODO: check service for zipcode
-  // const address = service.get(zipcode)
-
-  const address = new Address(zipcode)
-  res.json(address)
-})
+zipcodeRouter.get('/:zipcode', zipcodeValidator, zipcodeController)
 
 export { zipcodeRouter }
