@@ -1,8 +1,7 @@
 import express from 'express'
 import actuador from 'express-actuator'
 import helmet from 'helmet'
-
-import zipcode from './routes/zipcode'
+import { zipcodeRouter } from './routes'
 
 const app = express()
 
@@ -11,6 +10,6 @@ app.use(helmet())
 app.use(actuador())
 
 // Routes
-app.use('/zipcode', zipcode)
+app.use('/zipcode', zipcodeRouter)
 
 export default app
